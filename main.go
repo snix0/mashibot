@@ -86,12 +86,10 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	if m.Author.ID == s.State.User.ID {
 		return
 	}
-	// If the message is "ping" reply with "Pong!"
 	if m.Content == "!meme" {
 		s.ChannelMessageSend(m.ChannelID, url)
 	}
 
-	// If the message is "pong" reply with "Ping!"
 	if m.Content == "Do you like The Quarter Game" {
 		s.ChannelMessageSend(m.ChannelID, "YESS! The Quarter Game is better than " + word + "!!!")
 	}
